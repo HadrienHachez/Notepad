@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block location %}Add Category{% endblock %}
+
+{% block title %}Notepad - Category editor{% endblock %}
+
+{% block body %}
+    <div class="container category-form">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

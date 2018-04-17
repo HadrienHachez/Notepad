@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}Notepad - Summary{% endblock %}
+{% block location %}Home{% endblock %}
+
+
+{% block body %}
+    {% for item in notes %}
+    <div class="card card-outline-secondary my-4">
+        <div class="card-header">
+            {{ item.getTitle() }}
+        </div>
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{ item.getCategory().getWording() }}</h6>
+            <p>{{ item.getContent() }}</p>
+            <small class="text-muted">Posted on {{ item.getDate()|date('Y-m-d') }}</small>
+            <hr>
+            <a href="{{ path('edit_note', {'id': item.getId() }) }}" class="btn btn-outline-primary">Save</a>
+            <a href="{{ path('delete_note', {'id': item.getId() }) }}" class="btn btn-outline-danger">Delete</a>
+        </div>
+    </div>
+        {% endfor %}
+    <br/>
+{% endblock %}

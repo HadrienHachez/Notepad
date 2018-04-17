@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Notepad - Note editor{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block location %}Add Note{% endblock %}
+
+{% block body %}
+
+    <div class="container note-form">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
